@@ -1,0 +1,11 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: AutoAttend
+  label: Docs
+links:
+- text: Soroban Labs
+  link: https://sorobanlabs.io
+footer:
+  copyright: ""

@@ -1,0 +1,220 @@
+<style>
+  .zoomable-mermaid {
+      overflow: hidden;
+      resize: none;
+      min-height: 100px;
+      max-height: 400px;
+      max-width: 100%;
+      border: 1px solid #ddd;
+      margin: 0;
+      position: relative;
+      touch-action: none;
+  }
+  
+  .zoomable-mermaid svg {
+      transform-origin: 0 0;
+      cursor: move;
+      max-height: 380px;
+      max-width: 100%;
+  }
+  
+  .zoom-controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 4px;
+      padding: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+  }
+  
+  .zoom-controls button {
+      width: 30px;
+      height: 30px;
+      margin: 0 2px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  .zoom-controls button:hover {
+      background: #f0f0f0;
+  }
+
+  /* Fullscreen styles */
+  .zoomable-mermaid.fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9999;
+      background: white;
+      margin: 0;
+      padding: 10px;
+      border: none;
+      resize: none;
+  }
+</style>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for Mermaid to render
+    setTimeout(() => {
+        const containers = document.querySelectorAll('.zoomable-mermaid');
+        
+        containers.forEach(container => {
+            // Create zoom controls
+            const controls = document.createElement('div');
+            controls.className = 'zoom-controls';
+            controls.innerHTML = `
+                <button class="zoom-in" title="Zoom In">+</button>
+                <button class="zoom-out" title="Zoom Out">-</button>
+                <button class="zoom-reset" title="Reset View">⟲</button>
+                <button class="fullscreen-toggle" title="Toggle Fullscreen">⛶</button>
+            `;
+            container.appendChild(controls);
+            
+            // Wait for Mermaid to render SVG
+            const checkSVG = setInterval(() => {
+                const svg = container.querySelector('svg');
+                if (svg) {
+                    clearInterval(checkSVG);
+                    setupZoom(container, svg);
+                }
+            }, 200);
+        });
+    }, 1000);
+    
+    function setupZoom(container, svg) {
+        let scale = 1;
+        let panning = false;
+        let pointX = 0;
+        let pointY = 0;
+        let start = { x: 0, y: 0 };
+        let isFullscreen = false;
+        
+        // Make SVG fill container initially
+        svg.style.width = '100%';
+        svg.style.height = '100%';
+        
+        // Modified wheel handler - only prevent default for zoom operations
+        container.addEventListener('wheel', function(e) {
+            // Only prevent default when actively zooming (e.g., with Alt key)
+            if (e.altKey) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const xs = (e.clientX - container.getBoundingClientRect().left) / scale;
+                const ys = (e.clientY - container.getBoundingClientRect().top) / scale;
+                
+                let zoomFactor = -0.002;
+                scale += e.deltaY * zoomFactor;
+                scale = Math.min(Math.max(0.1, scale), 4);
+                
+                pointX = xs - xs * scale;
+                pointY = ys - ys * scale;
+                
+                updateTransform();
+            }
+            // Allow normal page scrolling otherwise
+        });
+        
+        // Modified touch handlers - only block specific container behaviors
+        container.addEventListener('touchstart', function(e) {
+            // Only prevent default for multi-touch gestures (pinch/zoom)
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        container.addEventListener('touchmove', function(e) {
+            // Only prevent default for multi-touch gestures
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Zoom in button
+        container.querySelector('.zoom-in').addEventListener('click', function(e) {
+            scale += 0.1;
+            scale = Math.min(scale, 4); // Max zoom
+            updateTransform();
+        });
+        
+        // Zoom out button
+        container.querySelector('.zoom-out').addEventListener('click', function(e) {
+            scale -= 0.1;
+            scale = Math.max(0.1, scale); // Min zoom
+            updateTransform();
+        });
+        
+        // Reset button
+        container.querySelector('.zoom-reset').addEventListener('click', function(e) {
+            scale = 1;
+            pointX = 0;
+            pointY = 0;
+            updateTransform();
+        });
+        
+        // Fullscreen toggle button
+        container.querySelector('.fullscreen-toggle').addEventListener('click', function(e) {
+            isFullscreen = !isFullscreen;
+            
+            if (isFullscreen) {
+                container.classList.add('fullscreen');
+                this.textContent = '⛶';
+                this.title = "Exit Fullscreen";
+            } else {
+                container.classList.remove('fullscreen');
+                this.textContent = '⛶';
+                this.title = "Toggle Fullscreen";
+            }
+            
+            // Reset position when toggling fullscreen
+            pointX = 0;
+            pointY = 0;
+            updateTransform();
+        });
+        
+        // Pan with mouse drag
+        container.addEventListener('mousedown', function(e) {
+            // Don't pan if clicking on controls
+            if (e.target.closest('.zoom-controls')) return;
+            
+            panning = true;
+            start = { x: e.clientX - pointX, y: e.clientY - pointY };
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (!panning) return;
+            e.preventDefault();
+            
+            pointX = (e.clientX - start.x);
+            pointY = (e.clientY - start.y);
+            
+            updateTransform();
+        });
+        
+        document.addEventListener('mouseup', function() {
+            panning = false;
+        });
+        
+        // ESC key to exit fullscreen
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isFullscreen) {
+                isFullscreen = false;
+                container.classList.remove('fullscreen');
+                container.querySelector('.fullscreen-toggle').textContent = '⛶';
+                container.querySelector('.fullscreen-toggle').title = "Toggle Fullscreen";
+            }
+        });
+        
+        function updateTransform() {
+            svg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+        }
+    }
+});
+</script>

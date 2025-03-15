@@ -9,32 +9,35 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>AutoAttend Documentation</title>
-    <meta name="title" content="AutoAttend Documentation">
-    <meta name="description" content="Welcome to the AutoAttend documentation. AutoAttend is a production-grade facial recognition system designed for educational institutions to...">
+    <title>AutoAttend Cost Calculator</title>
+    <meta name="title" content="AutoAttend Cost Calculator">
+    <meta name="description" content="This document provides a comprehensive overview of the AutoAttend Cost Calculator, a tool designed to help educational institutions estimate the...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="/">
+    <link rel="canonical" href="/cost-calculator/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="AutoAttend Documentation">
-    <meta property="og:description" content="Welcome to the AutoAttend documentation. AutoAttend is a production-grade facial recognition system designed for educational institutions to...">
+    <meta property="og:url" content="/cost-calculator/">
+    <meta property="og:title" content="AutoAttend Cost Calculator">
+    <meta property="og:description" content="This document provides a comprehensive overview of the AutoAttend Cost Calculator, a tool designed to help educational institutions estimate the...">
+    <meta property="og:image" content="/images/cost-calculator.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="AutoAttend Documentation">
-    <meta property="twitter:description" content="Welcome to the AutoAttend documentation. AutoAttend is a production-grade facial recognition system designed for educational institutions to...">
+    <meta property="twitter:url" content="/cost-calculator/">
+    <meta property="twitter:title" content="AutoAttend Cost Calculator">
+    <meta property="twitter:description" content="This document provides a comprehensive overview of the AutoAttend Cost Calculator, a tool designed to help educational institutions estimate the...">
+    <meta property="twitter:image" content="/images/cost-calculator.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.6.0.795367236313" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.795367236313" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.795367236313" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.795367236313" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.795367236313" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.795367236313" data-turbo-eval="false" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../resources/js/mermaid.js?v=3.6.0" defer></script>
 
     <style>
       .zoomable-mermaid {
@@ -270,7 +273,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="" class="flex items-center leading-snug text-2xl">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">AutoAttend</span>
                         </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
                     </div>
@@ -384,34 +387,387 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="autoattend-documentation" class="break-words">
+<doc-anchor-target id="autoattend-cost-calculator" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#autoattend-documentation">#</doc-anchor-trigger>
-        <span>AutoAttend Documentation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#autoattend-cost-calculator">#</doc-anchor-trigger>
+        <span>AutoAttend Cost Calculator</span>
     </h1>
 </doc-anchor-target>
-<p>Welcome to the AutoAttend documentation. AutoAttend is a production-grade facial recognition system designed for educational institutions to streamline attendance tracking.</p>
-<br>
-<doc-anchor-target id="documentation-sections">
+<p>This document provides a comprehensive overview of the AutoAttend Cost Calculator, a tool designed to help educational institutions estimate the financial implications of deploying the facial recognition attendance system. The calculator offers a transparent view of potential costs based on configuration choices.</p>
+<doc-anchor-target id="calculator-overview">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#documentation-sections">#</doc-anchor-trigger>
-        <span>Documentation Sections</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#calculator-overview">#</doc-anchor-trigger>
+        <span>Calculator Overview</span>
     </h2>
+</doc-anchor-target>
+<p>The AutoAttend Cost Calculator provides estimated costs across four main categories:</p>
+<ol>
+<li><strong>Infrastructure Costs</strong> - Physical computing resources required for operation</li>
+<li><strong>Model Selection</strong> - Impact of AI model choices on performance and cost</li>
+<li><strong>Processing Settings</strong> - Runtime configuration that affects resource utilization</li>
+<li><strong>Deployment Scale</strong> - Scope and scale of the implementation</li>
+</ol>
+<doc-anchor-target id="calculator-interface">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#calculator-interface">#</doc-anchor-trigger>
+        <span>Calculator Interface</span>
+    </h2>
+</doc-anchor-target>
+<p>The calculator interface is organized into tabbed sections for intuitive navigation:</p>
+<p><figure class="content-center">
+    <img src="../images/cost-calculator.png" alt="Cost Calculator Interface">
+    <figcaption class="caption">Cost Calculator Interface</figcaption>
+</figure>
+<em>The cost calculator provides a comprehensive interface for estimating deployment costs based on various parameters.</em></p>
+<doc-anchor-target id="model-selection">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#model-selection">#</doc-anchor-trigger>
+        <span>Model Selection</span>
+    </h2>
+</doc-anchor-target>
+<p>The model selection significantly impacts both system performance and overall costs. The calculator allows you to choose between different face detection and recognition models to balance accuracy and resource requirements.</p>
+<div class="zoomable-mermaid"><div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">flowchart TD
+    subgraph &quot;Face Detection Models&quot;
+        style FaceDetection fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+        YOLOv8n[&quot;YOLOv8n&lt;br&gt;Fastest (smallest)&quot;]
+        YOLO11n[&quot;YOLO11n&lt;br&gt;Fast&quot;]
+        YOLOv11s[&quot;YOLOv11s&lt;br&gt;Medium&quot;]
+        YOLOv11l[&quot;YOLOv11l&lt;br&gt;Most Accurate&quot;]
+        
+        YOLOv8n --&gt;|&quot;Speed ↑&lt;br&gt;Cost ↓&quot;| YOLO11n
+        YOLO11n --&gt;|&quot;Speed ↓&lt;br&gt;Cost ↑&quot;| YOLOv11s
+        YOLOv11s --&gt;|&quot;Speed ↓&lt;br&gt;Cost ↑&quot;| YOLOv11l
+        
+        style YOLOv8n fill:#bbdefb,stroke:#1565c0,color:black
+        style YOLO11n fill:#90caf9,stroke:#1565c0,color:black
+        style YOLOv11s fill:#64b5f6,stroke:#1565c0,color:black
+        style YOLOv11l fill:#42a5f5,stroke:#1565c0,color:black
+    end
+    
+    subgraph &quot;Face Recognition Models&quot;
+        style FaceRecognition fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+        R50[&quot;InsightFace R50&lt;br&gt;Faster&quot;]
+        R100[&quot;InsightFace R100&lt;br&gt;More Accurate&quot;]
+        
+        R50 --&gt;|&quot;Speed ↓&lt;br&gt;Cost ↑&quot;| R100
+        
+        style R50 fill:#a5d6a7,stroke:#2e7d32,color:black
+        style R100 fill:#81c784,stroke:#2e7d32,color:black
+    end
+    
+    CostImpact[&quot;Cost&lt;br&gt;Impact&quot;] --&gt; FaceDetection
+    CostImpact --&gt; FaceRecognition
+    
+    style CostImpact fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:black</pre></div>
+</div>
+<br>
+<doc-anchor-target id="performance-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#performance-settings">#</doc-anchor-trigger>
+        <span>Performance Settings</span>
+    </h2>
+</doc-anchor-target>
+<p>Performance settings directly impact resource utilization and consequently affect the overall cost of deployment.</p>
+<doc-anchor-target id="max-frame-size">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#max-frame-size">#</doc-anchor-trigger>
+        <span>Max Frame Size</span>
+    </h3>
+</doc-anchor-target>
+<p>The maximum frame size determines the resolution of video frames processed for face detection. This can be obtained from the camera specs.</p>
+<ul>
+<li><strong>Range</strong>: 320-1920 pixels</li>
+<li><strong>Lower values</strong> (e.g., 320-480px): Lower cost, reduced accuracy</li>
+<li><strong>Higher values</strong> (e.g., 1280-1920px): Higher cost, improved accuracy</li>
+<li><strong>Cost Impact</strong>: Higher resolutions increase processing and network costs significantly</li>
+</ul>
+<doc-anchor-target id="max-fps-frames-per-second">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#max-fps-frames-per-second">#</doc-anchor-trigger>
+        <span>Max FPS (Frames Per Second)</span>
+    </h3>
+</doc-anchor-target>
+<p>The maximum number of frames processed per second.</p>
+<ul>
+<li><strong>Range</strong>: 1-30 FPS</li>
+<li><strong>Lower values</strong> (e.g., 1-5 FPS): Lower cost, suitable for static environments</li>
+<li><strong>Higher values</strong> (e.g., 15-30 FPS): Higher cost, better for dynamic environments</li>
+<li><strong>Cost Impact</strong>: Each additional frame increases computational resource requirements linearly</li>
+</ul>
+<doc-anchor-target id="face-tracking">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#face-tracking">#</doc-anchor-trigger>
+        <span>Face Tracking</span>
+    </h3>
+</doc-anchor-target>
+<p>Face tracking allows the system to follow faces across frames without full detection on every frame.</p>
+<ul>
+<li><strong>Enabled</strong>: Slightly higher cost but improves efficiency for continuous monitoring</li>
+<li><strong>Disabled</strong>: Lower immediate cost but may require more frequent full-frame detections</li>
+<li><strong>Cost Impact</strong>: Modest increase in computational needs, generally cost-effective for continuous operation</li>
+</ul>
+<doc-anchor-target id="deployment-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#deployment-settings">#</doc-anchor-trigger>
+        <span>Deployment Settings</span>
+    </h2>
+</doc-anchor-target>
+<p>Deployment settings define the scale and scope of your AutoAttend implementation.</p>
+<doc-anchor-target id="number-of-concurrent-streams">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#number-of-concurrent-streams">#</doc-anchor-trigger>
+        <span>Number of Concurrent Streams</span>
+    </h3>
+</doc-anchor-target>
+<p>The number of camera feeds processed simultaneously.</p>
+<ul>
+<li><strong>Range</strong>: 1-10 streams</li>
+<li><strong>Cost Impact</strong>: Linear scaling of processing and resource requirements per stream</li>
+</ul>
+<doc-anchor-target id="number-of-instances">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#number-of-instances">#</doc-anchor-trigger>
+        <span>Number of Instances</span>
+    </h3>
+</doc-anchor-target>
+<p>The number of processing instances deployed (for load balancing or redundancy).</p>
+<ul>
+<li><strong>Range</strong>: 1-5 instances</li>
+<li><strong>Cost Impact</strong>: Linear scaling of infrastructure costs per instance</li>
+</ul>
+<doc-anchor-target id="usage-pattern">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-pattern">#</doc-anchor-trigger>
+        <span>Usage Pattern</span>
+    </h2>
+</doc-anchor-target>
+<p>The usage pattern defines when and how often the system will be operational.</p>
+<doc-anchor-target id="operational-hours">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#operational-hours">#</doc-anchor-trigger>
+        <span>Operational Hours</span>
+    </h3>
+</doc-anchor-target>
+<p>The total time the system will be active, measured in hours per day and days per month.</p>
+<ul>
+<li><strong>Hours Range</strong>: 1-24 hours per day</li>
+<li><strong>Days Range</strong>: 1-31 days per month</li>
+<li><strong>Optimization Tip</strong>: Configuring precise operational hours to match actual class schedules can significantly reduce costs</li>
+</ul>
+<doc-anchor-target id="cost-breakdown">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cost-breakdown">#</doc-anchor-trigger>
+        <span>Cost Breakdown</span>
+    </h2>
+</doc-anchor-target>
+<p>The calculator provides a comprehensive cost breakdown across multiple time horizons.</p>
+<div class="zoomable-mermaid"><div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">flowchart TB
+    subgraph &quot;Cost Components&quot;
+        style CostComponents fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+        
+        Infrastructure[&quot;Infrastructure Costs&quot;]
+        Processing[&quot;Processing Costs&quot;]
+        Network[&quot;Network Costs&quot;]
+        
+        Infrastructure --&gt; CPU[&quot;CPU Allocation&quot;]
+        Infrastructure --&gt; Memory[&quot;Memory Allocation&quot;]
+        Infrastructure --&gt; Storage[&quot;Storage Allocation&quot;]
+        
+        Processing --&gt; ModelComplexity[&quot;AI Model Complexity&quot;]
+        Processing --&gt; FrameSize[&quot;Frame Size Impact&quot;]
+        Processing --&gt; FrameRate[&quot;Frame Rate Impact&quot;]
+        Processing --&gt; TrackingOverhead[&quot;Tracking Overhead&quot;]
+        
+        Network --&gt; DataTransfer[&quot;Data Transfer Volume&quot;]
+        Network --&gt; StreamCount[&quot;Stream Count&quot;]
+    end
+    
+    subgraph &quot;Time Horizons&quot;
+        style TimeHorizons fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+        
+        Hourly[&quot;Hourly Cost&quot;]
+        Daily[&quot;Daily Cost&quot;]
+        Monthly[&quot;Monthly Cost&quot;]
+        PerStream[&quot;Per-Stream Cost&quot;]
+    end
+    
+    CostComponents --&gt; TimeHorizons
+    
+    style Infrastructure fill:#bbdefb,stroke:#1565c0,color:black
+    style Processing fill:#90caf9,stroke:#1565c0,color:black
+    style Network fill:#64b5f6,stroke:#1565c0,color:black
+    
+    style CPU fill:#e3f2fd,stroke:#1565c0,color:black
+    style Memory fill:#e3f2fd,stroke:#1565c0,color:black
+    style Storage fill:#e3f2fd,stroke:#1565c0,color:black
+    
+    style ModelComplexity fill:#e3f2fd,stroke:#1565c0,color:black
+    style FrameSize fill:#e3f2fd,stroke:#1565c0,color:black
+    style FrameRate fill:#e3f2fd,stroke:#1565c0,color:black
+    style TrackingOverhead fill:#e3f2fd,stroke:#1565c0,color:black
+    
+    style DataTransfer fill:#e3f2fd,stroke:#1565c0,color:black
+    style StreamCount fill:#e3f2fd,stroke:#1565c0,color:black
+    
+    style Hourly fill:#c8e6c9,stroke:#2e7d32,color:black
+    style Daily fill:#a5d6a7,stroke:#2e7d32,color:black
+    style Monthly fill:#81c784,stroke:#2e7d32,color:black
+    style PerStream fill:#66bb6a,stroke:#2e7d32,color:black</pre></div>
+</div>
+<br>
+<doc-anchor-target id="cost-summary-cards">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cost-summary-cards">#</doc-anchor-trigger>
+        <span>Cost Summary Cards</span>
+    </h3>
+</doc-anchor-target>
+<p>The calculator provides at-a-glance cost summaries across different time periods:</p>
+<p><figure class="content-center">
+    <img src="../images/cost-summary-cards.png" alt="Cost Summary Cards">
+    <figcaption class="caption">Cost Summary Cards</figcaption>
+</figure>
+<em>Quick reference cost cards showing hourly, daily, monthly, and per-stream costs.</em></p>
+<doc-anchor-target id="advanced-mode">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-mode">#</doc-anchor-trigger>
+        <span>Advanced Mode</span>
+    </h2>
+</doc-anchor-target>
+<p>For institutions with specific pricing information or custom infrastructure requirements, the calculator offers an advanced mode.</p>
+<p><figure class="content-center">
+    <img src="../images/advanced-mode-settings.png" alt="Advanced Mode Settings">
+    <figcaption class="caption">Advanced Mode Settings</figcaption>
+</figure>
+<em>Advanced mode allows customization of all cost parameters for more precise estimates.</em></p>
+<doc-anchor-target id="customizable-parameters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#customizable-parameters">#</doc-anchor-trigger>
+        <span>Customizable Parameters</span>
+    </h3>
 </doc-anchor-target>
 <ul>
-<li><a href="face-recognition-settings/">Face Recognition Settings</a> - Detailed configuration options for the face recognition system, including models, thresholds, and tracking parameters</li>
-<li><a href="cost-calculator/">Cost Calculator</a> - Interactive tool to estimate deployment costs based on hardware requirements, model selection, and performance settings</li>
-<li><a href="regis/">Registration System</a> - Detailed documentation for the student registration process, API endpoints, and face embedding technical details</li>
-<li><a href="kubernetes/">System Architecture</a> - Comprehensive overview of the AutoAttend architecture, Kubernetes configuration, deployment/installation process and operational aspects</li>
+<li>Infrastructure costs (CPU, memory, storage, network)</li>
+<li>Resource allocation specifics</li>
+<li>Custom pricing based on specific cloud providers or on-premises deployments</li>
 </ul>
-<doc-anchor-target id="about-autoattend">
+<doc-anchor-target id="implementation-considerations">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#about-autoattend">#</doc-anchor-trigger>
-        <span>About AutoAttend</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#implementation-considerations">#</doc-anchor-trigger>
+        <span>Implementation Considerations</span>
     </h2>
 </doc-anchor-target>
-<p>AutoAttend uses advanced facial recognition technology to capture and process student attendance data automatically. The system features real-time face detection, vector-based storage, and secure authentication, all deployed on a Kubernetes infrastructure for scalability and reliability.</p>
-<p>Developed by <a href="https://sorobanlabs.io">Soroban Labs</a></p>
+<doc-anchor-target id="cost-optimization-strategies">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cost-optimization-strategies">#</doc-anchor-trigger>
+        <span>Cost Optimization Strategies</span>
+    </h3>
+</doc-anchor-target>
+<p>The calculator can help identify optimal configurations based on your institution&#x27;s specific needs:</p>
+<ol>
+<li><strong>Scale-Optimized</strong>: Maximize number of streams with minimal resource allocation</li>
+<li><strong>Performance-Optimized</strong>: Prioritize accuracy and responsiveness over cost</li>
+<li><strong>Balanced</strong>: Find the optimal middle ground between cost and performance</li>
+</ol>
+<doc-anchor-target id="deployment-scenarios">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#deployment-scenarios">#</doc-anchor-trigger>
+        <span>Deployment Scenarios</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Typical Configuration</th>
+<th>Estimated Monthly Cost Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small Institution (1-5 cameras)</td>
+<td>YOLOv8n, R50, 640px, 10 FPS</td>
+<td>$XXX - $XXX</td>
+</tr>
+<tr>
+<td>Medium Institution (5-20 cameras)</td>
+<td>YOLO11n, R50, 640px, 10 FPS</td>
+<td>$XXX - $XXX</td>
+</tr>
+<tr>
+<td>Large Institution (20+ cameras)</td>
+<td>YOLOv11s, R100, 1280px, 15 FPS</td>
+<td>$XXX - $XXX</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">The cost estimates provided by the calculator are approximations based on typical cloud infrastructure pricing. 
+Actual costs may vary based on your specific provider, region, and negotiated rates. </code></pre>
+</doc-codeblock></div>
+        </div>
+    </div>
+</div>
+<br>
+<doc-anchor-target id="best-practices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practices">#</doc-anchor-trigger>
+        <span>Best Practices</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="getting-accurate-estimates">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-accurate-estimates">#</doc-anchor-trigger>
+        <span>Getting Accurate Estimates</span>
+    </h3>
+</doc-anchor-target>
+<p>To get the most accurate cost estimates:</p>
+<ol>
+<li>Configure the calculator to match your specific deployment scenario</li>
+<li>Consider both peak and average usage patterns</li>
+<li>Adjust settings to find the optimal balance between cost and performance</li>
+<li>Use advanced mode if you have specific pricing information</li>
+</ol>
+<doc-anchor-target id="cost-effective-configuration">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cost-effective-configuration">#</doc-anchor-trigger>
+        <span>Cost-Effective Configuration</span>
+    </h3>
+</doc-anchor-target>
+<p>For most educational institutions, we recommend:</p>
+<ul>
+<li>Start with a balanced configuration</li>
+<li>Monitor actual usage patterns after initial deployment</li>
+<li>Adjust parameters based on real-world performance and costs</li>
+<li>Consider scaling up during peak periods (beginning/end of semesters)</li>
+</ul>
+<doc-anchor-target id="related-documentation">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#related-documentation">#</doc-anchor-trigger>
+        <span>Related Documentation</span>
+    </h2>
+</doc-anchor-target>
+<p>For comprehensive information about the complete AutoAttend system, please refer to:</p>
+<ul>
+<li><a href="../kubernetes/">AutoAttend Architecture</a> - System architecture and deployment</li>
+<li><a href="../regis/">Registration System</a> - Student enrollment and face embedding capture</li>
+<li><a href="../face-recognition-settings/">Face Recognition Settings</a> - Detailed face recognition configuration</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -421,13 +777,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../face-recognition-settings/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Face Recognition Settings</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="face-recognition-settings/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../regis/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Face Recognition Settings</span>
+                                                <span class="block mt-1">Student Registration</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -471,6 +834,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "AutoAttend Documentation", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Cost Calculator", level: 1, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
